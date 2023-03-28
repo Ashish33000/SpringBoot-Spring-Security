@@ -29,7 +29,7 @@ public class SecurityConfig {
 		UserDetails adminUser = org.springframework.security.core.userdetails.User.withUsername("ashish1")
 				.password(passwordEncoder().encode("adminroot"))
 				.roles("ADMIN").build();
-		return new InMemoryUserDetailsManager(normalUser, adminUser);
+		return new CustomUserDetailService();
 	}
 
 	@Bean
